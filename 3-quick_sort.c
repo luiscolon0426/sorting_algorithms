@@ -1,7 +1,15 @@
 #include "sort.h"
 #include <stddef.h>
 
-
+/**
+ * part - parts the array
+ * @array: array of file
+ * @a: integer
+ * @b: integer
+ * @size: size of array
+ *
+ * Return: new list
+ */
 int part(int *array, int a, int b, size_t size)
 {
 
@@ -27,6 +35,18 @@ int part(int *array, int a, int b, size_t size)
 	}
 	return (i);
 }
+
+
+
+/**
+ * qsorting - sorts an array
+ * @array: array of file
+ * @a: integer
+ * @b: integer
+ * @size: size of array
+ *
+ * Return: None
+ */
 void qsorting(int *array, int a, int b, size_t size)
 {
 	int index;
@@ -40,8 +60,11 @@ void qsorting(int *array, int a, int b, size_t size)
 }
 
 /**
+ * quick_sort - sorts the array
+ * @array: array of task
+ * @size: size of array
  *
- *
+ * Return None
  */
 void quick_sort(int *array, size_t size)
 {
