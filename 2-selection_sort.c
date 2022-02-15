@@ -1,10 +1,13 @@
 #include "sort.h"
+
 /**
- * swap - swap integers
- * @a: integer
- * @b: integer
+ * swap - Function to swap integers
+ * @a: int 1
+ * @b: int 2
  *
+ * Return: void
  */
+
 void swap(int *a, int *b)
 {
 	int tmp = *a;
@@ -20,9 +23,13 @@ void swap(int *a, int *b)
  *
  * Return: void
  */
+
 void selection_sort(int *array, size_t size)
 {
 	unsigned int a, b, min;
+
+	if (array == NULL || size < 2)
+		return;
 
 	for (a = 0; a < size - 1; a++)
 	{
@@ -32,7 +39,10 @@ void selection_sort(int *array, size_t size)
 			if (array[b] < array[min])
 				min = b;
 		}
-		swap(&array[min], &array[a]);
-		print_array(array, size);
+		if (min != a)
+		{
+			swap(&array[min], &array[a]);
+			print_array(array, size);
+		}
 	}
 }
