@@ -4,22 +4,21 @@
 /**
  * part - parts the array
  * @array: array of file
- * @a: integer
- * @b: integer
+ * @low: integer
+ * @high: integer
  * @size: size of array
  *
  * Return: new list
  */
-int part(int *array, int a, int b, size_t size)
+int part(int *array, int low, int high, size_t size)
 {
+	int pivot = array[high];
 
-	int pivot = array[b];
-
-	int i = a - 1;
+	int i = low - 1;
 	int j;
 	int g;
 
-	for (j = a; j <= b; j++)
+	for (j = low; j <= high; j++)
 	{
 		if (array[j] <= pivot)
 		{
@@ -36,26 +35,24 @@ int part(int *array, int a, int b, size_t size)
 	return (i);
 }
 
-
-
 /**
  * qsorting - sorts an array
  * @array: array of file
- * @a: integer
- * @b: integer
+ * @low: integer
+ * @high: integer
  * @size: size of array
  *
  * Return: None
  */
-void qsorting(int *array, int a, int b, size_t size)
+void qsorting(int *array, int low, int high, size_t size)
 {
 	int index;
 
-	if (a < b)
+	if (low < high)
 	{
-		index = part(array, a, b, size);
-		qsorting(array, a, index - 1, size);
-		qsorting(array, index + 1, b, size);
+		index = part(array, low, high, size);
+		qsorting(array, low, index - 1, size);
+		qsorting(array, index + 1, high, size);
 	}
 }
 
